@@ -149,3 +149,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/c,macos,windows,linux,visualstudiocode
+
+###############################################################################################
+# Todos los archivos que estan en bulid no se envian al repositorio
+build/**
