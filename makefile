@@ -23,6 +23,7 @@ SRC_DIR = ./src
 BUILD_DIR = ./build
 BIN_DIR = $(BUILD_DIR)/bin
 OBJ_DIR = $(BUILD_DIR)/obj
+DOC_DIR = $(BUILD_DIR)/doc
 # Donde buscar los archivos
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
@@ -37,6 +38,9 @@ $(OBJ_DIR): $(BUILD_DIR)
 # Creando carpeta bin
 $(BIN_DIR): $(BUILD_DIR)
 	mkdir $(BIN_DIR)
+# crea la carpeta doc
+$(DOC_DIR): $(BUILD_DIR)
+	mkdir $(DOC_DIR)
 # Convertir archivos .c en .o
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(OBJ_DIR)
 	gcc -c $< -o $@
@@ -45,6 +49,7 @@ all: $(OBJ_FILES) $(BIN_DIR)
 	echo $(SRC_FILES)
 	echo $(OBJ_FILES)
 	gcc -o $(BIN_DIR)/app.elf $(OBJ_FILES)
+	doxygen -f doxyfile
 #
 clean: $(BUILD_DIR)
 	rm -r $(BUILD_DIR)

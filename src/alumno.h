@@ -39,21 +39,33 @@ extern "C" {
 /* === Public macros definitions =============================================================== */
 
 #include <stdint.h>
-
+/**
+ * @brief Define el tamaño de los parametros de los campos de texto
+ * 
+ * Este parametro define el tamaño de los campos de texto de la estrucctura alumno_t
+*/
 #define FIELD_SIZE 50
 
 /* === Public data type declarations =========================================================== */
 typedef struct alumno_s
 {
-   char apellido[FIELD_SIZE];
-   char nombre[FIELD_SIZE];
-   uint32_t dni;
+   char apellido[FIELD_SIZE]; //!< Almacena el apellido
+   char nombre[FIELD_SIZE]; //!< Almacena el Nombre
+   uint32_t dni; //!< Almacena el dni
 } const * alumno_t;
 
 /* === Public variable declarations ============================================================ */
 
 /* === Public function declarations ============================================================ */
-
+/**
+ * @brief Encadena el nombre, el apellido y el dni  en un formato tipo .json
+ * 
+ * @param alumno 
+ * @param cadena
+ * @param espacio
+ * @return int
+ * 
+*/
 int Serializar(alumno_t alumno, char cadena[], uint32_t espacio);
 
 /* === End of documentation ==================================================================== */
