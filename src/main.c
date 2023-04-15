@@ -44,7 +44,9 @@ SPDX-License-Identifier: MIT
 /* === Private function implementation ========================================================= */
 
 /* === Public function implementation ========================================================== */
-
+int main(void){
+   return 0;
+}
 /* === End of documentation ==================================================================== */
 
 /** @} End of module definition for doxygen */
