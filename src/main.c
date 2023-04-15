@@ -45,6 +45,11 @@ SPDX-License-Identifier: MIT
 
 /* === Public function implementation ========================================================== */
 int main(void){
+
+   struct alumno_s yo;
+   strncpy(yo.apellido, "Rivas", sizeof(yo.apellido));
+   
+   serializar();
    return 0;
 }
 /* === End of documentation ==================================================================== */
