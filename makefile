@@ -30,17 +30,21 @@ OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
 .DEFAULT_GOAL := all
 # Creando carpeta build
 $(BUILD_DIR):
-	mkdir: $(BUILD_DIR)
+	mkdir $(BUILD_DIR)
 # Creando carpeta obj
 $(OBJ_DIR): $(BUILD_DIR)
 	mkdir $(OBJ_DIR)
+# Creando carpeta bin
+$(BIN_DIR): $(BUILD_DIR)
+	mkdir $(BIN_DIR)
 # Convertir archivos .c en .o
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(OBJ_DIR)
 	gcc -c $< -o $@
-# Comprobacion por terminal
-all: $(OBJ_FILES)
+# Comprobacion por terminal y compila
+all: $(OBJ_FILES) $(BIN_DIR)
 	echo $(SRC_FILES)
 	echo $(OBJ_FILES)
+	gcc -o $(BIN_DIR)/app.elf $(OBJ_FILES)
 #
 clean: $(BUILD_DIR)
 	rm -r $(BUILD_DIR)
