@@ -50,12 +50,12 @@ static int SerializarNumero();
 
 static int SerializarCadena(const char * campo, const char * valor, char * cadena, int espacio) {
 
-   //return snprintf(cadena, espacio, "\"%s\":\"%s",", campo, valor);
+   return snprintf(cadena, espacio, "\"%s\":\"%s\",", campo, valor);
 }
 
 static int SerializarNumero(const char * campo, int valor, char * cadena, int espacio) {
 
-   //return snprintf(cadena, espacio, "\"%s\":\"%d",", campo, valor);
+   return snprintf(cadena, espacio, "\"%s\":\"%d\",", campo, valor);
 }
 
 /* === Public function implementation ========================================================== */
@@ -77,7 +77,7 @@ int Serializar(alumno_t alumno, char cadena[], uint32_t espacio){
    if(resultado > 0) {
       disponible -= resultado;
       cadena += resultado;
-      resultado = SerializarCadena("dni", alumno->dni, cadena, disponible);
+      resultado = SerializarNumero("dni", alumno->dni, cadena, disponible);
    }
    if (resultado > 0) {
       cadena += resultado;
