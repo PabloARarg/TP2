@@ -19,32 +19,37 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 SPDX-License-Identifier: MIT
 *************************************************************************************************/
 
-/** \brief Segundo trabajo practico
+#ifndef TEMPLATE_H
+#define TEMPLATE_H
+
+/** \brief Declaraciones publicas del modulo de alumnos
  **
- ** \addtogroup tp2 TPN2
- ** \brief Segundo Practico
+ ** \addtogroup alumno Alumno
+ ** \brief Modulo para gestion de aulumno
  ** @{ */
 
-/* === Headers files inclusions =============================================================== */
+/* === Headers files inclusions ================================================================ */
 
-#include "alumno.h"
+/* === Cabecera C++ ============================================================================ */
 
-/* === Macros definitions ====================================================================== */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-/* === Private data type declarations ========================================================== */
+/* === Public macros definitions =============================================================== */
 
-/* === Private variable declarations =========================================================== */
+/* === Public data type declarations =========================================================== */
 
-/* === Private function declarations =========================================================== */
+/* === Public variable declarations ============================================================ */
 
-/* === Public variable definitions ============================================================= */
-
-/* === Private variable definitions ============================================================ */
-
-/* === Private function implementation ========================================================= */
-
-/* === Public function implementation ========================================================== */
+/* === Public function declarations ============================================================ */
 
 /* === End of documentation ==================================================================== */
 
+#ifdef __cplusplus
+}
+#endif
+
 /** @} End of module definition for doxygen */
+
+#endif /* TEMPLATE_H */

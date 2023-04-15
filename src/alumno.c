@@ -19,10 +19,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 SPDX-License-Identifier: MIT
 *************************************************************************************************/
 
-/** \brief Segundo trabajo practico
+/** \brief Implementacion del modulo de alumnos
  **
- ** \addtogroup tp2 TPN2
- ** \brief Segundo Practico
+ ** \addtogroup alumno Alumno
+ ** \brief Modulo para gestion de aulumno
  ** @{ */
 
 /* === Headers files inclusions =============================================================== */

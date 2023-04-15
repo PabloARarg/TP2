@@ -19,15 +19,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 SPDX-License-Identifier: MIT
 *************************************************************************************************/
 
-/** \brief Segundo trabajo practico
+/** \brief Brief description of the file
  **
- ** \addtogroup tp2 TPN2
- ** \brief Segundo Practico
+ ** Full file description
+ **
+ ** \addtogroup name Module denomination
+ ** \brief Brief description of the module
  ** @{ */
 
 /* === Headers files inclusions =============================================================== */
 
-#include "alumno.h"
+#include "template.h"
 
 /* === Macros definitions ====================================================================== */
 
