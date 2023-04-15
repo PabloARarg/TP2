@@ -45,11 +45,24 @@ SPDX-License-Identifier: MIT
 
 /* === Public function implementation ========================================================== */
 int main(void){
+// pone los datos en flash
+   static struct alumno_s yo = {
+      .apellido = "Rivas",
+      .nombre = "Pablo",
+      .dni = 35933178,
+   };
+   //pone los datos en ram -> pila
+   // strncpy(yo.apellido, "Rivas", sizeof(yo.apellido)); 
+   // strncpy(yo.nombre, "Pablo", sizeof(yo.nombre));
+   char cadena[128];
 
-   struct alumno_s yo;
-   strncpy(yo.apellido, "Rivas", sizeof(yo.apellido));
-   
-   serializar();
+   if (Serializar(&yo, cadena, sizeof(cadena)) >= 0) {
+      printf("%s\n", cadena);
+   }
+   else {
+      printf("Error al serializar\n");
+   }
+
    return 0;
 }
 /* === End of documentation ==================================================================== */
