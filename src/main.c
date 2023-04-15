@@ -28,6 +28,7 @@ SPDX-License-Identifier: MIT
 /* === Headers files inclusions =============================================================== */
 
 #include "alumno.h"
+#include <stdio.h>
 
 /* === Macros definitions ====================================================================== */
 

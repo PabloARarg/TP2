@@ -28,6 +28,7 @@ SPDX-License-Identifier: MIT
 /* === Headers files inclusions =============================================================== */
 
 #include "alumno.h"
+#include <stdio.h>
 
 /* === Macros definitions ====================================================================== */
 
@@ -47,21 +48,44 @@ static int SerializarNumero();
 
 /* === Private function implementation ========================================================= */
 
-static int SerializarCadena() {
+static int SerializarCadena(const char * campo, const char * valor, char * cadena, int espacio) {
 
-   return 0;
+   //return snprintf(cadena, espacio, "\"%s\":\"%s",", campo, valor);
 }
 
-static int SerializarNumero() {
+static int SerializarNumero(const char * campo, int valor, char * cadena, int espacio) {
 
-   return 0;
+   //return snprintf(cadena, espacio, "\"%s\":\"%d",", campo, valor);
 }
 
 /* === Public function implementation ========================================================== */
 
-int Serializar(const alumno_t alumno, char cadena[], uint32_t espacio){
-   
-   return 0;
+int Serializar(alumno_t alumno, char cadena[], uint32_t espacio){
+   int resultado;
+   int disponible = espacio;
+
+   cadena[0] = '{';
+   cadena++;
+   disponible--;
+
+   resultado = SerializarCadena("apellido", alumno->apellido, cadena, disponible);
+   if(resultado > 0) {
+      disponible -= resultado;
+      cadena += resultado;
+      resultado = SerializarCadena("nombre", alumno->nombre, cadena, disponible);
+   }
+   if(resultado > 0) {
+      disponible -= resultado;
+      cadena += resultado;
+      resultado = SerializarCadena("dni", alumno->dni, cadena, disponible);
+   }
+   if (resultado > 0) {
+      cadena += resultado;
+      *(cadena - 1) = '}';
+      resultado = espacio - disponible;
+   }
+
+   return resultado;
 }
 
 /* === End of documentation ==================================================================== */
