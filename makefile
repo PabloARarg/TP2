@@ -49,7 +49,9 @@ all: $(OBJ_FILES) $(BIN_DIR)
 	echo $(SRC_FILES)
 	echo $(OBJ_FILES)
 	gcc -o $(BIN_DIR)/app.elf $(OBJ_FILES)
-	doxygen -f doxyfile
-#
+
 clean: $(BUILD_DIR)
 	rm -r $(BUILD_DIR)
+
+doc: $(DOC_DIR)
+	doxygen -f doxyfile
