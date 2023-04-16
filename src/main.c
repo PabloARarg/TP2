@@ -21,8 +21,9 @@ SPDX-License-Identifier: MIT
 
 /** \brief Segundo trabajo practico
  **
- ** \addtogroup tp2 TPN2
- ** \brief Segundo Practico
+ ** \addtogroup tp2 TPN2 main
+ ** \brief Genera una estructura con el nombre, el apellido y el dni del alumno, ademas llama a la funcion serializar.
+ ** @see main()
  ** @{ */
 
 /* === Headers files inclusions =============================================================== */
@@ -45,6 +46,12 @@ SPDX-License-Identifier: MIT
 /* === Private function implementation ========================================================= */
 
 /* === Public function implementation ========================================================== */
+/**
+ * @brief Crea una estructura estatic con valores de tipo alumno_s y llama a la fucion serializar.
+ * 
+ * Muestra por el termina los datos del alumno en formato .json o un aviso de error si no se pudo ejecutar la funcion correctamente.
+ * @return int
+ */
 int main(void){
 // pone los datos en flash
    static struct alumno_s yo = {

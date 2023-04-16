@@ -18,7 +18,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 SPDX-License-Identifier: MIT
 *************************************************************************************************/
-
+/**
+ * @file alumno.h
+ * @version 1.0.0
+ * @date 14/4/2023
+ * @author Pablo Rivas 
+ * @brief Contiene la declaracion de la funcion serializar y un tipo de dato estructura del alumno
+ * \see Serializar()
+*/
 #ifndef TEMPLATE_H
 #define TEMPLATE_H
 
@@ -47,6 +54,10 @@ extern "C" {
 #define FIELD_SIZE 50
 
 /* === Public data type declarations =========================================================== */
+/**
+ * @brief Define un tipo de estuctura utilizada.
+ * 
+ */
 typedef struct alumno_s
 {
    char apellido[FIELD_SIZE]; //!< Almacena el apellido
@@ -60,9 +71,9 @@ typedef struct alumno_s
 /**
  * @brief Encadena el nombre, el apellido y el dni  en un formato tipo .json
  * 
- * @param alumno 
- * @param cadena
- * @param espacio
+ * @param alumno Envia un puntero al incio de la estructura
+ * @param cadena Evia un puntero para almacenar la salida
+ * @param espacio Envia el tamaño que puede ocupar la cadena
  * @return int
  * 
 */

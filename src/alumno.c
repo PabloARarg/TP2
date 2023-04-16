@@ -47,18 +47,47 @@ static int SerializarNumero();
 /* === Private variable definitions ============================================================ */
 
 /* === Private function implementation ========================================================= */
+/**
+ * @brief Puncion privada que encadena el nombre y el apellido.
+ * 
+ * @param campo Puntero a una cadena que teiene el nombre del campo [in].
+ * @param valor Puntero al comienzo de la cadena con el valor en la estructura [in].
+ * @param cadena Puntero de la cadena [out].
+ * @param espacio Valor que determina cuanto espacio queda para almacenar [out].
+ * @return int Retorna un valor -1 si no se pudo ejecutar correctamente [out].
+ */
 
 static int SerializarCadena(const char * campo, const char * valor, char * cadena, int espacio) {
 
    return snprintf(cadena, espacio, "\"%s\":\"%s\",", campo, valor);
 }
-
+/**
+ * @brief Puncion privada que encadena el numero de documento.
+ * 
+ * @param campo Puntero a una cadena que teiene el nombre del campo [in].
+ * @param valor Valor del campo en la estructura [in].
+ * @param cadena Puntero de la cadena [out].
+ * @param espacio Valor que determina cuanto espacio queda para almacenar [out].
+ * @return int Retorna un valor -1 si no se pudo ejecutar correctamente [out].
+ */
 static int SerializarNumero(const char * campo, int valor, char * cadena, int espacio) {
 
    return snprintf(cadena, espacio, "\"%s\":\"%d\",", campo, valor);
 }
 
 /* === Public function implementation ========================================================== */
+/**
+ * @brief Llama a sub-funciones 
+ * @see SerializarCadena() 
+ * @see SerializarNumero()
+ * 
+ * Maneja la implementacion de los corchete y el espacio disponible en la cadena de salida.
+ * 
+ * @param alumno Estructura con los datos del alumno.
+ * @param cadena Puntero a la caden de salida por terminal.
+ * @param espacio Pamaño maximo de la cadena.
+ * @return int Retorna un valor -1 si no se pudo ejecutar correctamente.
+ */
 
 int Serializar(alumno_t alumno, char cadena[], uint32_t espacio){
    int resultado;
