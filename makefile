@@ -54,4 +54,5 @@ clean: $(BUILD_DIR)
 	rm -r $(BUILD_DIR)
 
 doc: $(DOC_DIR)
-	doxygen -f doxyfile
+	doxygen
+	open ./build/doc/html/index.html
